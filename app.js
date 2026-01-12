@@ -187,7 +187,12 @@ function init() {
     markResult("bad");
   });
 
-  els.resetProgress.addEventListener("click", resetProgress);
+  els.resetProgress.addEventListener("click", () => {
+  const ok = window.confirm("本当に進捗をリセットしていいですか？（元に戻せません）");
+  if (!ok) return;
+  resetProgress();
+});
+
 
   els.speakBtn.addEventListener("click", speakCurrentEnglishOnly);
   els.stopSpeakBtn.addEventListener("click", stopSpeak);
