@@ -55,9 +55,10 @@
           <select id="filterPos"></select>
         </label>
 
+        <!-- ★追加：mastered除外スイッチ -->
         <label class="field toggle">
-          <span>自動読み上げ（英語のみ）</span>
-          <input type="checkbox" id="autoSpeak" />
+          <span>masteredを出題しない</span>
+          <input type="checkbox" id="excludeMastered" />
         </label>
       </div>
 
@@ -70,7 +71,8 @@
     <!-- タイピング用パネル（ja-en-typing のときだけ表示） -->
     <section class="panel typingPanel" id="typingPanel" aria-live="polite">
       <div class="row">
-        <input id="typingInput" class="input" placeholder="英単語を入力してEnter" autocomplete="off" autocapitalize="off" spellcheck="false" />
+        <input id="typingInput" class="input" placeholder="英単語を入力してEnter"
+               autocomplete="off" autocapitalize="off" spellcheck="false" />
         <button class="btn" id="typingCheckBtn">チェック</button>
         <button class="btn" id="typingRevealBtn">答え表示</button>
       </div>
@@ -103,8 +105,6 @@
       <button class="btn bad" id="markBad">不正解</button>
       <button class="btn" id="revealBtn">答えを見る</button>
       <button class="btn" id="skipBtn">スキップ</button>
-      <button class="btn" id="speakBtn">読み上げ（英語のみ）</button>
-      <button class="btn" id="stopSpeakBtn">停止</button>
     </section>
 
     <!-- mastered 達成率 -->
